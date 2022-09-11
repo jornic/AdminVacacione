@@ -1,0 +1,11 @@
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Debug\Negocio.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Debug\Negocio.pdb
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Debug\Datos.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Debug\Soporte.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Debug\Datos.pdb
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Debug\Soporte.pdb
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Debug\Negocio.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Debug\Negocio.pdb

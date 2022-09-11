@@ -1,0 +1,6 @@
+D:\Repos\AdminV\AdminVacacione\Soporte\bin\Debug\Soporte.dll
+D:\Repos\AdminV\AdminVacacione\Soporte\bin\Debug\Soporte.pdb
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Debug\Soporte.csproj.AssemblyReference.cache
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Debug\Soporte.csproj.CoreCompileInputs.cache
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Debug\Soporte.dll
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Debug\Soporte.pdb

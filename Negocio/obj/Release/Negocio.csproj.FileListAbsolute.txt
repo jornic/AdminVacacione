@@ -1,0 +1,11 @@
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Release\Negocio.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Release\Negocio.pdb
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Release\Datos.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Release\Soporte.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Release\Datos.pdb
+D:\Repos\AdminV\AdminVacacione\Negocio\bin\Release\Soporte.pdb
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Release\Negocio.csproj.AssemblyReference.cache
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Release\Negocio.csproj.CoreCompileInputs.cache
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Release\Negocio.csproj.CopyComplete
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Release\Negocio.dll
+D:\Repos\AdminV\AdminVacacione\Negocio\obj\Release\Negocio.pdb

@@ -1,0 +1,6 @@
+D:\Repos\AdminV\AdminVacacione\Soporte\bin\Release\Soporte.dll
+D:\Repos\AdminV\AdminVacacione\Soporte\bin\Release\Soporte.pdb
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Release\Soporte.csproj.AssemblyReference.cache
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Release\Soporte.csproj.CoreCompileInputs.cache
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Release\Soporte.dll
+D:\Repos\AdminV\AdminVacacione\Soporte\obj\Release\Soporte.pdb

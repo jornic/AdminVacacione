@@ -1,0 +1,9 @@
+D:\Repos\AdminV\AdminVacacione\Datos\bin\Debug\Datos.dll
+D:\Repos\AdminV\AdminVacacione\Datos\bin\Debug\Datos.pdb
+D:\Repos\AdminV\AdminVacacione\Datos\bin\Debug\Soporte.dll
+D:\Repos\AdminV\AdminVacacione\Datos\bin\Debug\Soporte.pdb
+D:\Repos\AdminV\AdminVacacione\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+D:\Repos\AdminV\AdminVacacione\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+D:\Repos\AdminV\AdminVacacione\Datos\obj\Debug\Datos.csproj.CopyComplete
+D:\Repos\AdminV\AdminVacacione\Datos\obj\Debug\Datos.dll
+D:\Repos\AdminV\AdminVacacione\Datos\obj\Debug\Datos.pdb

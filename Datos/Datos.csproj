@@ -30,8 +30,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Jornic.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,13 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositorios\Conexion.cs" />
+    <Compile Include="Datos.cs" />
+    <Compile Include="Repositorios\PConex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\RepoEmpleado.cs" />
+    <Compile Include="Repositorios\RSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Soporte\Soporte.csproj">
       <Project>{1f5060ad-55fd-4c58-bde7-b73929f5004d}</Project>
       <Name>Soporte</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entidades\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Jornic.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
