@@ -20,3 +20,52 @@ GO
 
 INSERT INTO Empleados(PNombre,PApellido,TipoIdentificacion,NIdentificacion,FechaIngreso,Salario,Direccion) VALUES('Admin','Admin','CEDULA','000-000000-00000',GETDATE(),0,'.')
 GO
+
+CREATE TABLE Users(
+Id INT PRIMARY KEY IDENTITY(1,1),
+Usuario VARCHAR(50) NOT NULL,
+Pwd varbinary(8000) NOT NULL,
+FK_Empleado INT UNIQUE,
+FOREIGN KEY (FK_Empleado) REFERENCES Empleados(NumEmpleado)
+)
+GO
+
+
+/*Encriptado*/
+CREATE FUNCTION Encriptar(@Valor NVARCHAR(MAX))
+RETURNS VARBINARY(8000)
+AS 
+	BEGIN
+		DECLARE @Resul VARBINARY(8000)
+		SET @Resul = ENCRYPTBYPASSPHRASE('Key',@Valor)
+		RETURN (@Resul)
+	END
+GO
+
+CREATE FUNCTION Desencriptar(@Valor VARBINARY(8000))
+RETURNS NVARCHAR(MAX)
+AS 
+	BEGIN
+		DECLARE @Resul NVARCHAR(max)
+		SET @Resul = DECRYPTBYPASSPHRASE('Key',@Valor)
+		RETURN (@Resul)
+	END
+GO
+
+
+
+/*PRECEDIMIENTOS*/
+/*lOGIN*/
+CREATE PROCEDURE UsersLogin(
+@User VARCHAR(50),
+@Pass VARCHAR(50)
+)
+AS
+	BEGIN
+		SELECT U.Id,UPPER(CONCAT(E.PNombre,E.SNombre,E.PApellido,E.SApellido)) AS Nombre FROM Users AS U
+		INNER JOIN Empleados AS E ON E.NumEmpleado = U.FK_Empleado
+		WHERE U.Usuario = @User and dbo.Desencriptar(U.Pwd) = @Pass
+	END
+GO
+/*ENDLOGIN*/
+

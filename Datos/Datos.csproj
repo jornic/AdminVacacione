@@ -56,6 +56,7 @@
     <Compile Include="Repositorios\PConex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepoEmpleado.cs" />
+    <Compile Include="Repositorios\RLogin.cs" />
     <Compile Include="Repositorios\RSettings.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,9 +65,7 @@
       <Name>Soporte</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Jornic.pfx" />
   </ItemGroup>

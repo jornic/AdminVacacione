@@ -11,8 +11,6 @@ namespace Soporte.CacheUsers
 
         public static int Id { get; set; }
         public static string Nombre { get; set; }
-        public static string Apellido { get; set; }
-        public static string Cargo { get; set; }
 
     }
 }

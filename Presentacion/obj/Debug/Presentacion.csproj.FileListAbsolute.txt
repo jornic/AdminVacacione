@@ -18,3 +18,4 @@ D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.csproj.CopyCo
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.exe
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.pdb
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.Configuracion.resources
+D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.frmLogin.resources
