@@ -23,3 +23,5 @@ D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.Home.resource
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.Home.es-NI.resources
 D:\Repos\AdminV\AdminVacacione\Presentacion\bin\Debug\es-NI\Presentacion.resources.dll
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\es-NI\Presentacion.resources.dll
+D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.frmListEmpleado.resources
+D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.RegistrarEmpleado.resources

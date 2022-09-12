@@ -340,8 +340,8 @@ namespace Presentacion
             // 
             // pnVentanas
             // 
-            resources.ApplyResources(this.pnVentanas, "pnVentanas");
             this.pnVentanas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            resources.ApplyResources(this.pnVentanas, "pnVentanas");
             this.pnVentanas.Name = "pnVentanas";
             // 
             // Home
@@ -369,7 +369,6 @@ namespace Presentacion
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

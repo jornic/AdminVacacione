@@ -6,10 +6,10 @@ GO
 
 CREATE TABLE Empleados(
 NumEmpleado INT PRIMARY KEY IDENTITY(2000,1),
-PNombre NCHAR(50) NOT NULL,
-SNombre NCHAR(50) DEFAULT 'XXX',
-PApellido NCHAR(50)NOT NULL,
-SApellido NCHAR(50)DEFAULT 'XXX',
+PNombre VARCHAR(50) NOT NULL,
+SNombre VARCHAR(50) DEFAULT 'XXX',
+PApellido VARCHAR(50)NOT NULL,
+SApellido VARCHAR(50)DEFAULT 'XXX',
 TipoIdentificacion VARCHAR(50) NOT NULL,
 NIdentificacion VARCHAR(20)NOT NULL UNIQUE,
 FechaIngreso DATE NOT NULL,
@@ -70,4 +70,52 @@ AS
 	END
 GO
 /*ENDLOGIN*/
+/*SELECCIONAR TODO DE EMPLEADO*/
+CREATE PROCEDURE SelectAll
+AS
+BEGIN
+	SELECT NumEmpleado AS Numero,CONCAT(PNombre,' ',SNombre,' ',PApellido,' ',SApellido) AS Nombre 
+	,TipoIdentificacion AS Tipo, NIdentificacion AS Identificacion ,
+	FechaIngreso AS Ingreso,Salario,Direccion FROM Empleados
+END
+GO
+/*FIN*/
+
+/*ALMACENAR EMPLEADO*/
+
+CREATE PROCEDURE InsertEmpleado(
+@Id INT,
+@NA VARCHAR(50),
+@NB VARCHAR(50),
+@AA VARCHAR(50),
+@AB VARCHAR(50),
+@TIdenti VARCHAR(50),
+@NIdenti VARCHAR(50),
+@Fe DATE,
+@Sa MONEY,
+@Dir TEXT
+)AS
+BEGIN
+	IF(EXISTS(SELECT * FROM Empleados WHERE NumEmpleado = @Id))
+	BEGIN
+		UPDATE Empleados SET PNombre = @NA, SNombre = @NB,PApellido = @AA,SApellido = @AB,TipoIdentificacion = @TIdenti
+		,NIdentificacion = @NIdenti,FechaIngreso = @Fe,Salario = @Sa,Direccion = @Dir WHERE NumEmpleado = @Id
+	END
+	ELSE
+	BEGIN
+		INSERT INTO Empleados 
+		VALUES(@NA,@NB,@AA,@AB,@TIdenti,@NIdenti,@Fe,@Sa,@Dir)
+	END
+END
+GO
+/*END*/
+
+/*PROCEDIMIENTO PARA ELIMINAR EMPLEADO*/
+CREATE PROCEDURE DeleteEmpleado(
+@Id INT
+)
+AS
+DELETE FROM Empleados WHERE NumEmpleado = @Id
+GO
+/*FIN*/
 

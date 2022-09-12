@@ -18,7 +18,6 @@ namespace Presentacion
             InitializeComponent();
             this.ControlBox = false;
             this.Text = string.Empty;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
            
         }
 
@@ -207,6 +206,7 @@ namespace Presentacion
             btnLisEmpl.BackColor = ColorTranslator.FromHtml(ColorActivo);
             btnUsers.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnHisto.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
+            AbrirFormEnPanel(new frmListEmpleado());
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
