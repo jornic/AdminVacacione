@@ -19,3 +19,7 @@ D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.exe
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.pdb
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.Configuracion.resources
 D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.frmLogin.resources
+D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.Home.resources
+D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\Presentacion.Home.es-NI.resources
+D:\Repos\AdminV\AdminVacacione\Presentacion\bin\Debug\es-NI\Presentacion.resources.dll
+D:\Repos\AdminV\AdminVacacione\Presentacion\obj\Debug\es-NI\Presentacion.resources.dll
