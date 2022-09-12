@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-//using Negocios;
+using Negocio;
+using Soporte.Entidades;
+using Soporte.CacheUsers;
 
 namespace Presentacion
 {
@@ -21,7 +23,7 @@ namespace Presentacion
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
 
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-        
+
         public void Mover()
         {
             ReleaseCapture();
@@ -33,44 +35,6 @@ namespace Presentacion
             InitializeComponent();
         }
 
-       
-        private void txtUsuario_Enter(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "User")
-            {
-                txtUsuario.Text = "";
-                txtUsuario.ForeColor = Color.FromArgb(1, 91, 234);
-            }
-        }
-
-        private void txtUsuario_Leave(object sender, EventArgs e)
-        {
-            if (txtUsuario.Text == "")
-            {
-                txtUsuario.ForeColor = Color.DarkGray;
-                txtUsuario.Text = "User";
-            }
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "Password")
-            {
-                txtPassword.Text = "";
-                txtPassword.UseSystemPasswordChar = true;
-                txtPassword.ForeColor = Color.FromArgb(1, 91, 234);
-            }
-        }
-
-        private void txtPassword_Leave(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "")
-            {
-                txtPassword.UseSystemPasswordChar = false;
-                txtPassword.ForeColor = Color.DarkGray;
-                txtPassword.Text = "Password";
-            }
-        }
 
         private void frmLogin_MouseDown(object sender, MouseEventArgs e)
         {
@@ -82,28 +46,6 @@ namespace Presentacion
             Mover();
         }
 
-        
-        private void pbshowPassword_Click(object sender, EventArgs e)
-        {
-           
-        }
-        private void btnSingIn_Click(object sender, EventArgs e)
-        {/*
-            Negocio negocio = new Negocio();
-            if (negocio.Login(txtUsuario.Text,txtPassword.Text))
-            {
-                Home home = new Home();
-                this.Hide();
-                home.Show(); 
-                MessageBox.Show("Hola Bievenido al sistema.");
-            }
-            else
-            {
-                MessageBox.Show("Usuario no valido.");
-            }              */          
-        }
-
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -111,7 +53,31 @@ namespace Presentacion
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            lbError.Text = string.Empty;
+            NLogin login = new NLogin();
+            ELogin eLogin = new ELogin()
+            {
+                Users = txtUsers.Text,
+                Password = txtPass.Text
 
+            };
+
+            if (login.AccessLogin(eLogin))
+            {
+                // Home home = new Home();
+                // this.Hide();
+                // home.Show();
+                string a = CacheUsers.ApeA + "" + CacheUsers.ApeB;
+                MessageBox.Show(a);
+                txtUsers.Text = "";
+                txtPass.Text = "";
+            }
+            else
+            {
+                lbError.Text = "Acceso denegado";
+                lbError.ForeColor = ColorTranslator.FromHtml("#E73F32");
+                txtUsers.Focus();
+            }
         }
 
         private void btnEyeOpen_Click(object sender, EventArgs e)
@@ -129,19 +95,52 @@ namespace Presentacion
             if (txtPass.UseSystemPasswordChar == false)
             {
                 txtPass.UseSystemPasswordChar = true;
-                btnAyesClose.Visible =false;
+                btnAyesClose.Visible = false;
                 btnEyeOpen.Visible = true;
             }
         }
 
-        private void txtPass_TextChanged(object sender, EventArgs e)
+        private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void txtUsers_Enter(object sender, EventArgs e)
         {
-            txtPass.UseSystemPasswordChar = true;
+            if (txtUsers.Text == "Usuario")
+            {
+                txtUsers.Text = "";
+                txtUsers.ForeColor = ColorTranslator.FromHtml("#125570");
+            }
+        }
+
+        private void txtUsers_Leave(object sender, EventArgs e)
+        {
+            if (txtUsers.Text == "")
+            {
+                txtUsers.ForeColor = Color.DarkGray;
+                txtUsers.Text = "Usuario";
+            }
+        }
+
+        private void txtPass_Leave(object sender, EventArgs e)
+        {
+            if (txtPass.Text == "")
+            {
+                txtPass.UseSystemPasswordChar = false;
+                txtPass.ForeColor = Color.DarkGray;
+                txtPass.Text = "Contraseña";
+            }
+        }
+
+        private void txtPass_Enter(object sender, EventArgs e)
+        {
+            if (txtPass.Text == "Contraseña")
+            {
+                txtPass.Text = "";
+                txtPass.UseSystemPasswordChar = true;
+                txtPass.ForeColor = ColorTranslator.FromHtml("#125570");
+            }
         }
     }
 }

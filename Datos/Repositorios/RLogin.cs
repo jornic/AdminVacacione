@@ -10,10 +10,10 @@ using Soporte.Entidades;
 
 namespace Datos.Repositorios
 {
-    public abstract class RLogin:Conexion
+    public class RLogin:Conexion
     {
         SqlDataReader read;
-        protected bool Login(ELogin eLogin)
+        public bool Login(ELogin eLogin)
         {
             using (var conex = GetConnection())
             {
@@ -21,8 +21,8 @@ namespace Datos.Repositorios
                 using (var comando = new SqlCommand("UsersLogin", conex))
                 {
                     comando.CommandType = CommandType.StoredProcedure;
-                    comando.Parameters.AddWithValue("@Users", eLogin.Users);
-                    comando.Parameters.AddWithValue("@Pwd", eLogin.Password);
+                    comando.Parameters.AddWithValue("@User", eLogin.Users);
+                    comando.Parameters.AddWithValue("@Pass", eLogin.Password);
 
                     read = comando.ExecuteReader();
 
@@ -31,7 +31,10 @@ namespace Datos.Repositorios
                         while (read.Read())
                         {
                             CacheUsers.Id = read.GetInt32(0);
-                            CacheUsers.Nombre = read.GetString(1);
+                            CacheUsers.NomA = read.GetString(1);
+                            CacheUsers.NomB = read.GetString(2);
+                            CacheUsers.ApeA = read.GetString(3);
+                            CacheUsers.ApeB = read.GetString(4);
                         }
                         return true;
                     }
