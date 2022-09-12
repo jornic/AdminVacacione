@@ -103,5 +103,41 @@ namespace Datos.Repositorios
             }
             return msj;
         }
+        public EEmpleado SelectEmpleado(int Id)
+        {
+            var e = new EEmpleado();
+            using (var conex = GetConnection())
+            {
+                conex.Open();
+                using (var comando = new SqlCommand("SelectEmpl", conex))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@Id", Id);
+
+                    dataReader = comando.ExecuteReader();
+
+                    if (dataReader.HasRows)
+                    {
+                        while (dataReader.Read())
+                        {
+                            e.Id = dataReader.GetInt32(0);
+                            e.Nombrea = dataReader.GetString(1);
+                            e.Nombreb = dataReader.GetString(2);
+                            e.Apellidoa = dataReader.GetString(3);
+                            e.Apellidob = dataReader.GetString(4);
+                            e.Ttipodeident = dataReader.GetString(5);
+                            e.Nident = dataReader.GetString(6);
+                            e.Fecha = dataReader.GetDateTime(7);
+                            e.Salario = Convert.ToDouble(dataReader.GetDecimal(8));
+                            e.Direccion = dataReader.GetString(9);
+
+                        }
+                    }
+                    conex.Close();
+                    conex.Dispose();
+                }
+            }
+            return e;
+        }
     }
 }

@@ -28,5 +28,10 @@ namespace Negocio.Modelos
             int Id = Convert.ToInt32(id);
             return empleado.Delete(Id);
         }
+        public EEmpleado InforEmpleado(string id)
+        {
+            int Id = Convert.ToInt32(id);
+            return empleado.SelectEmpleado(Id);
+        }
     }
 }

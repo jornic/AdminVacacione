@@ -33,6 +33,8 @@ GO
 INSERT INTO Users VALUES('Admin',dbo.Encriptar('Admin12345'),2000)
 GO
 
+
+/*Funciones*/
 /*Encriptado*/
 CREATE FUNCTION Encriptar(@Valor NVARCHAR(MAX))
 RETURNS VARBINARY(8000)
@@ -53,8 +55,18 @@ AS
 		RETURN (@Resul)
 	END
 GO
-
-
+/*END*/
+/*Formato NIO*/
+CREATE FUNCTION FormatNIO(@Valor MONEY)
+RETURNS VARCHAR(15)
+AS 
+	BEGIN
+		DECLARE @Resul VARCHAR(15)
+		SET @Resul = REPLACE(FORMAT(@Valor,'C','En-Us'),'$','C$') 
+		RETURN (@Resul)
+	END
+GO
+/*END*/
 
 /*PRECEDIMIENTOS*/
 /*lOGIN*/
@@ -76,7 +88,7 @@ AS
 BEGIN
 	SELECT NumEmpleado AS Numero,CONCAT(PNombre,' ',SNombre,' ',PApellido,' ',SApellido) AS Nombre 
 	,TipoIdentificacion AS Tipo, NIdentificacion AS Identificacion ,
-	FechaIngreso AS Ingreso,Salario,Direccion FROM Empleados
+	FechaIngreso AS Ingreso,dbo.FormatNIO(Salario)AS Salario,Direccion FROM Empleados
 END
 GO
 /*FIN*/

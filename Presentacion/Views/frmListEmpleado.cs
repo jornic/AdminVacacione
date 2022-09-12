@@ -16,28 +16,10 @@ namespace Presentacion
     {
         NEmpleado empleado = new NEmpleado();
 
-        public string idEmpleado1 = "";
-        public string Nombre1 = "";
-        public string Apellido1 = "";
-        public string Tele1;
-        public string Email1;
-        public string Dir1;
-        public string Edad1;
-        public string Genero1;
-        public string Cargo1;
 
         public frmListEmpleado()
         {
             InitializeComponent();
-        }
-        
-        public void RegisEmpleado(string nombre, string apillido, string tel, string email, string dir, int edad, string sexo, string cargo)
-        {
-           /* int id = random.Next(100, 1000);
-            Empleado empleado = new Empleado(id, nombre, apillido, tel, email, dir, edad, sexo, cargo);
-            lis.Add(empleado);
-            dgvEmpleados.DataSource = null;
-            dgvEmpleados.DataSource = lis;*/
         }
         public void Cargar()
         {
@@ -98,10 +80,13 @@ namespace Presentacion
         {
             if (dgvEmpleados.SelectedRows.Count > 0)
             {
-                string idEmpleado = dgvEmpleados.CurrentRow.Cells["Numero"].Value.ToString();
-                string res = empleado.Delete(idEmpleado);
-                MessageBox.Show(res);
-                Cargar();
+                if (MessageBox.Show("¿Esta seguro de eliminar?", "INFORMACION DE SISTEMA ",MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.OK)
+                {
+                    string idEmpleado = dgvEmpleados.CurrentRow.Cells["Numero"].Value.ToString();
+                    string res = empleado.Delete(idEmpleado);
+                    MessageBox.Show(res);
+                    Cargar();
+                }
             }
             else
                 MessageBox.Show("seleccione una fila");
@@ -109,40 +94,29 @@ namespace Presentacion
         
         private void actualizarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-          /*  RegistrarEmpleado frmRegistrar = new RegistrarEmpleado();
-
-            string Genero = "";
-
             if (dgvEmpleados.SelectedRows.Count > 0)
             {
-                frmRegistrar.IdEmpleado = dgvEmpleados.CurrentRow.Cells["Id"].Value.ToString();
-                frmRegistrar.txtNombre.Text = dgvEmpleados.CurrentRow.Cells["Nombre"].Value.ToString();
-                frmRegistrar.txtApellido.Text = dgvEmpleados.CurrentRow.Cells["Apellido"].Value.ToString();
-                frmRegistrar.txtTelefono.Text = dgvEmpleados.CurrentRow.Cells["Telefono"].Value.ToString();
-                frmRegistrar.txtEmail.Text = dgvEmpleados.CurrentRow.Cells["Email"].Value.ToString();
-                frmRegistrar.txtDir.Text = dgvEmpleados.CurrentRow.Cells["Direccion"].Value.ToString();
-                frmRegistrar.txtEdad.Text = dgvEmpleados.CurrentRow.Cells["Edad"].Value.ToString();
-                Genero = dgvEmpleados.CurrentRow.Cells["Genero"].Value.ToString();
-                frmRegistrar.cbCargo.Text = dgvEmpleados.CurrentRow.Cells["Cargo"].Value.ToString();
+                var obj = empleado.InforEmpleado(dgvEmpleados.CurrentRow.Cells["Numero"].Value.ToString());
 
-                if(Genero == "Masculino")
-                {
-                    frmRegistrar.rbMasculino.Checked = true;
-                    frmRegistrar.rbFemenino.Checked = false;
-                }
-                else
-                {
-                    frmRegistrar.rbFemenino.Checked = true;
-                    frmRegistrar.rbMasculino.Checked = false;
-                }
+                RegistrarEmpleado registrar = new RegistrarEmpleado();
+                registrar.IdEmpleado = obj.Id;
+                registrar.txtFirstName.Text = obj.Nombrea;
+                registrar.txtSecunName.Text = obj.Nombreb;
+                registrar.txtFLastName.Text = obj.Apellidoa;
+                registrar.txtSLastName.Text = obj.Apellidob;
+                registrar.cbTipo.Text = obj.Ttipodeident;
+                registrar.txtNIdentificacion.Text = obj.Nident;
+                registrar.rtbAddres.Text = obj.Direccion;
+                registrar.dtpDate.Value = obj.Fecha;
+                registrar.txtSalario.Text = obj.Salario.ToString();
 
-                frmRegistrar.ShowDialog();
+                registrar.ShowDialog();
                 Cargar();
             }
             else
-                MessageBox.Show("seleccione una fila por favor");
-            
-            */
+                MessageBox.Show("seleccione una fila");
+
         }
+
     }
 }

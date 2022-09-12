@@ -17,7 +17,7 @@ namespace Presentacion
         NEmpleado ne;
 
         public int IdEmpleado = 0;
-
+         
         public RegistrarEmpleado()
         {
             InitializeComponent();
@@ -34,31 +34,31 @@ namespace Presentacion
             bool a = false;
             error.Clear();
 
-            if (txtNombreA.Text == string.Empty)
+            if (txtFirstName.Text == string.Empty)
             {
-                error.SetError(txtNombreA, "Rellenar campo");
+                error.SetError(txtFirstName, "Rellenar campo");
                 a = true;
             }
-            if (txtNombreB.Text == string.Empty)
+            if (txtSecunName.Text == string.Empty)
             {
-                error.SetError(txtNombreB, "Rellenar campo");
-                a = true;
-
-            }
-            if (txtApellidoA.Text == string.Empty)
-            {
-                error.SetError(txtApellidoA, "Rellenar campo");
+                error.SetError(txtSecunName, "Rellenar campo");
                 a = true;
 
             }
-            if (txtApellidoB.Text == string.Empty)
+            if (txtFLastName.Text == string.Empty)
             {
-                error.SetError(txtApellidoB, "Rellenar campo");
+                error.SetError(txtFLastName, "Rellenar campo");
+                a = true;
+
+            }
+            if (txtSLastName.Text == string.Empty)
+            {
+                error.SetError(txtSLastName, "Rellenar campo");
                 a = true;
             }
-            if (txtDir.Text == string.Empty)
+            if (rtbAddres.Text == string.Empty)
             {
-                error.SetError(txtDir, "Rellenar campo");
+                error.SetError(rtbAddres, "Rellenar campo");
                 a = true;
             }
             if (txtNIdentificacion.Text.Equals(string.Empty))
@@ -96,11 +96,11 @@ namespace Presentacion
         }
         public void LimpiarCajas()
         {
-            txtNombreA.Text = string.Empty;
-            txtNombreB.Text = string.Empty;
-            txtApellidoA.Text = string.Empty;
-            txtApellidoB.Text = string.Empty;
-            txtDir.Text = string.Empty;
+            txtFirstName.Text = string.Empty;
+            txtSecunName.Text = string.Empty;
+            txtFLastName.Text = string.Empty;
+            txtSLastName.Text = string.Empty;
+            rtbAddres.Text = string.Empty;
             txtSalario.Text = string.Empty;
             txtNIdentificacion.Text = string.Empty;
         }
@@ -108,10 +108,10 @@ namespace Presentacion
         public void Guardar()
         {
             ne = new NEmpleado();
-            EEmpleado e = new EEmpleado() { Id = IdEmpleado, Nombrea = txtNombreA.Text,
-                Nombreb = txtNombreB.Text, Apellidoa = txtApellidoA.Text, Apellidob = txtApellidoB.Text,
-                Ttipodeident = cbTipo.Text, Nident = txtNIdentificacion.Text, Fecha = dtpFecha.Value.Date,
-                Direccion = txtDir.Text,
+            EEmpleado e = new EEmpleado() { Id = IdEmpleado, Nombrea = txtFirstName.Text,
+                Nombreb = txtSecunName.Text, Apellidoa = txtFLastName.Text, Apellidob = txtSLastName.Text,
+                Ttipodeident = cbTipo.Text, Nident = txtNIdentificacion.Text, Fecha = dtpDate.Value.Date,
+                Direccion = rtbAddres.Text,
                 Salario = Convert.ToDouble(txtSalario.Text)
             };
 
@@ -130,5 +130,20 @@ namespace Presentacion
             }
         }
 
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void txtSalario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
