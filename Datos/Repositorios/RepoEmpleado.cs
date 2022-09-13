@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using Soporte.Entidades;
+using Soporte.CacheUsers;
 
 namespace Datos.Repositorios
 {
@@ -42,6 +43,7 @@ namespace Datos.Repositorios
                 {
                     comando.CommandType = CommandType.StoredProcedure;
 
+                    comando.Parameters.AddWithValue("@NMod", string.Concat(CacheUsers.NomA," ",CacheUsers.ApeA));
                     comando.Parameters.AddWithValue("@Id", empleado.Id);
                     comando.Parameters.AddWithValue("@NA", empleado.Nombrea);
                     comando.Parameters.AddWithValue("@NB", empleado.Nombreb);
@@ -70,9 +72,7 @@ namespace Datos.Repositorios
                             msj = "Error :" + e;
                         }
                     }
-                    comando.Parameters.Clear();
                 }
-                conex.Dispose();
             }
             return msj;
         }
@@ -87,6 +87,7 @@ namespace Datos.Repositorios
                     comando.CommandType = CommandType.StoredProcedure;
 
                     comando.Parameters.AddWithValue("@Id", Id);
+                    comando.Parameters.AddWithValue("@NMod", string.Concat(CacheUsers.NomA, " ", CacheUsers.ApeA));
 
                     try
                     {
@@ -95,11 +96,9 @@ namespace Datos.Repositorios
                     }
                     catch (Exception e)
                     {
-                            msj = "Error :" + e;
+                        msj = "Error :" + e;
                     }
-                    comando.Parameters.Clear();
                 }
-                conex.Dispose();
             }
             return msj;
         }
@@ -115,7 +114,7 @@ namespace Datos.Repositorios
                     comando.Parameters.AddWithValue("@Id", Id);
 
                     dataReader = comando.ExecuteReader();
-
+                    
                     if (dataReader.HasRows)
                     {
                         while (dataReader.Read())
@@ -133,8 +132,6 @@ namespace Datos.Repositorios
 
                         }
                     }
-                    conex.Close();
-                    conex.Dispose();
                 }
             }
             return e;

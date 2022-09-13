@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Soporte.CacheUsers;
 
-namespace Presentacion
+namespace Presentacion.Views
 {
     public partial class Home : Form
     {
@@ -128,12 +129,13 @@ namespace Presentacion
             btnLisEmpl.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnUsers.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnHisto.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
+            AbrirFormEnPanel(new frmPrincipal());
         }
        
         private void Form1_Load(object sender, EventArgs e)
         {
             EjecutarBtnHome();
-          //  lbDatos.Text = CacheUsers.Cargo + " - " + CacheUsers.Nombre + " " + CacheUsers.Apellido;
+            lbDatos.Text = string.Concat("ADMINISTRADOR - ",CacheUsers.NomA," ",CacheUsers.NomB," ",CacheUsers.ApeA," ",CacheUsers.ApeB).ToUpper();
             
         }
 
@@ -149,7 +151,9 @@ namespace Presentacion
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-
+            frmLogin frmLogin = new frmLogin();
+            this.Close();
+            frmLogin.Show();
         }
 
         private void btnHisto_Click(object sender, EventArgs e)
@@ -161,6 +165,7 @@ namespace Presentacion
             btnLisEmpl.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnUsers.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnHisto.BackColor = ColorTranslator.FromHtml(ColorActivo);
+            AbrirFormEnPanel(new frmHistorial());
 
         }
 
@@ -173,6 +178,7 @@ namespace Presentacion
             btnLisEmpl.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnUsers.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnHisto.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
+            AbrirFormEnPanel(new frmNuevaCVacacion());
         }
 
         private void btnDiasEspeV_Click(object sender, EventArgs e)
@@ -184,6 +190,7 @@ namespace Presentacion
             btnLisEmpl.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnUsers.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnHisto.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
+            AbrirFormEnPanel(new frmDiasEspecial());
         }
 
         private void btnVDePers_Click(object sender, EventArgs e)
@@ -195,6 +202,7 @@ namespace Presentacion
             btnLisEmpl.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnUsers.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnHisto.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
+            AbrirFormEnPanel(new frmVacacionesPer());
         }
 
         private void btnLisEmpl_Click(object sender, EventArgs e)
@@ -218,6 +226,7 @@ namespace Presentacion
             btnLisEmpl.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
             btnUsers.BackColor = ColorTranslator.FromHtml(ColorActivo);
             btnHisto.BackColor = ColorTranslator.FromHtml(ColorNoActivo);
+            AbrirFormEnPanel(new frmNuevoUser());
         }
 
         private void btnHome_Click(object sender, EventArgs e)

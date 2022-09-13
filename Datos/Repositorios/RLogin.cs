@@ -10,7 +10,7 @@ using Soporte.Entidades;
 
 namespace Datos.Repositorios
 {
-    public class RLogin:Conexion
+    public class RLogin: Conexion
     {
         SqlDataReader read;
         public bool Login(ELogin eLogin)

@@ -1,5 +1,5 @@
 ﻿
-namespace Presentacion
+namespace Presentacion.Views
 {
     partial class frmListEmpleado
     {
@@ -49,16 +49,15 @@ namespace Presentacion
             // 
             this.pnData.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnData.AutoScroll = true;
-            this.pnData.AutoScrollMinSize = new System.Drawing.Size(905, 387);
-            this.pnData.AutoSize = true;
             this.pnData.BackColor = System.Drawing.Color.White;
             this.pnData.Controls.Add(this.lbLista);
             this.pnData.Controls.Add(this.btnAddEmpleado);
             this.pnData.Controls.Add(this.dgvEmpleados);
-            this.pnData.Location = new System.Drawing.Point(12, 12);
+            this.pnData.Location = new System.Drawing.Point(2, 2);
             this.pnData.Name = "pnData";
-            this.pnData.Size = new System.Drawing.Size(905, 387);
+            this.pnData.Size = new System.Drawing.Size(865, 387);
             this.pnData.TabIndex = 22;
+            this.pnData.Paint += new System.Windows.Forms.PaintEventHandler(this.pnData_Paint);
             // 
             // lbLista
             // 
@@ -83,7 +82,7 @@ namespace Presentacion
             this.btnAddEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEmpleado.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnAddEmpleado.Location = new System.Drawing.Point(783, 12);
+            this.btnAddEmpleado.Location = new System.Drawing.Point(742, 11);
             this.btnAddEmpleado.Name = "btnAddEmpleado";
             this.btnAddEmpleado.Size = new System.Drawing.Size(109, 23);
             this.btnAddEmpleado.TabIndex = 23;
@@ -96,19 +95,17 @@ namespace Presentacion
             // 
             this.dgvEmpleados.AllowUserToAddRows = false;
             this.dgvEmpleados.AllowUserToDeleteRows = false;
-            this.dgvEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmpleados.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.ContextMenuStrip = this.cmsData;
             this.dgvEmpleados.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvEmpleados.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvEmpleados.Location = new System.Drawing.Point(0, 48);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.ReadOnly = true;
-            this.dgvEmpleados.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvEmpleados.Size = new System.Drawing.Size(905, 339);
+            this.dgvEmpleados.Size = new System.Drawing.Size(865, 339);
             this.dgvEmpleados.TabIndex = 0;
             // 
             // cmsData
@@ -157,8 +154,9 @@ namespace Presentacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(929, 411);
+            this.ClientSize = new System.Drawing.Size(889, 414);
             this.Controls.Add(this.pnData);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumSize = new System.Drawing.Size(905, 387);
@@ -171,7 +169,6 @@ namespace Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.cmsData.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

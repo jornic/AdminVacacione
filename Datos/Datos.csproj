@@ -55,8 +55,10 @@
     <Compile Include="Repositorios\PConex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepoEmpleado.cs" />
+    <Compile Include="Repositorios\RHistorial.cs" />
     <Compile Include="Repositorios\RLogin.cs" />
     <Compile Include="Repositorios\RSettings.cs" />
+    <Compile Include="Repositorios\RUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Soporte\Soporte.csproj">

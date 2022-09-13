@@ -75,7 +75,7 @@ namespace Presentacion
             {
                 try
                 {
-                    int i = Convert.ToInt32(txtSalario.Text);
+                    double i = Convert.ToDouble(txtSalario.Text);
                 }
                 catch
                 {
@@ -108,11 +108,14 @@ namespace Presentacion
         public void Guardar()
         {
             ne = new NEmpleado();
+            string a = txtSalario.Text;
+            string b = a.Replace('.', ',');
+            double Salarios = Convert.ToDouble(b);
             EEmpleado e = new EEmpleado() { Id = IdEmpleado, Nombrea = txtFirstName.Text,
                 Nombreb = txtSecunName.Text, Apellidoa = txtFLastName.Text, Apellidob = txtSLastName.Text,
                 Ttipodeident = cbTipo.Text, Nident = txtNIdentificacion.Text, Fecha = dtpDate.Value.Date,
                 Direccion = rtbAddres.Text,
-                Salario = Convert.ToDouble(txtSalario.Text)
+                Salario = Convert.ToDouble((txtSalario.Text).Replace('.',','))
             };
 
             string msj = ne.InsertEmpleado(e);

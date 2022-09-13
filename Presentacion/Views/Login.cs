@@ -12,7 +12,7 @@ using Negocio;
 using Soporte.Entidades;
 using Soporte.CacheUsers;
 
-namespace Presentacion
+namespace Presentacion.Views
 {
     public partial class frmLogin : Form
     {
@@ -64,11 +64,9 @@ namespace Presentacion
 
             if (login.AccessLogin(eLogin))
             {
-                // Home home = new Home();
-                // this.Hide();
-                // home.Show();
-                string a = CacheUsers.ApeA + "" + CacheUsers.ApeB;
-                MessageBox.Show(a);
+                Home home = new Home();
+                this.Close();
+                home.Show();
                 txtUsers.Text = "";
                 txtPass.Text = "";
             }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Negocio;
 using System.Threading;
 
-namespace Presentacion
+namespace Presentacion.Views
 {
     public partial class Splash : Form
     {
@@ -55,7 +55,9 @@ namespace Presentacion
             if (PruebaConex.Equals(StartConexion.Ok))
             {
                 lbDetalles.Text = "Conexion :" + PruebaConex.ToString();
-                //login
+                frmLogin l = new frmLogin();
+                this.Hide();
+                l.Show();
             }
             else if (PruebaConex.Equals(StartConexion.Fallo))
             {
@@ -73,8 +75,9 @@ namespace Presentacion
             }
         }
         int a = 0;
+
         private void Timer_Tick(object sender, EventArgs e)
-        {
+        { 
             switch (a)
             {
                 case 0:

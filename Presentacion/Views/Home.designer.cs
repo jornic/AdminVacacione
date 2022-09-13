@@ -1,5 +1,5 @@
 ﻿
-namespace Presentacion
+namespace Presentacion.Views
 {
     partial class Home
     {

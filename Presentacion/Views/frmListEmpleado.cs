@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Negocio.Modelos;
 
 
-namespace Presentacion
+namespace Presentacion.Views
 {
     public partial class frmListEmpleado : Form
     {
@@ -80,7 +80,7 @@ namespace Presentacion
         {
             if (dgvEmpleados.SelectedRows.Count > 0)
             {
-                if (MessageBox.Show("¿Esta seguro de eliminar?", "INFORMACION DE SISTEMA ",MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.OK)
+                if (MessageBox.Show("¿Esta seguro de eliminar?", "INFORMACION DEL SISTEMA ",MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     string idEmpleado = dgvEmpleados.CurrentRow.Cells["Numero"].Value.ToString();
                     string res = empleado.Delete(idEmpleado);
@@ -118,5 +118,9 @@ namespace Presentacion
 
         }
 
+        private void pnData_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
