@@ -51,6 +51,7 @@
     <Compile Include="Modelos\NHistorial.cs" />
     <Compile Include="Modelos\NLogin.cs" />
     <Compile Include="Modelos\NUser.cs" />
+    <Compile Include="Modelos\NVacacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\NSplash.cs" />
     <Compile Include="Modelos\Settings.cs" />

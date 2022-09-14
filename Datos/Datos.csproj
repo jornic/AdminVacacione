@@ -59,6 +59,7 @@
     <Compile Include="Repositorios\RLogin.cs" />
     <Compile Include="Repositorios\RSettings.cs" />
     <Compile Include="Repositorios\RUser.cs" />
+    <Compile Include="Repositorios\RVacacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Soporte\Soporte.csproj">

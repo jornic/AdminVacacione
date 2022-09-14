@@ -29,17 +29,17 @@ namespace Presentacion.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.mcMeses = new System.Windows.Forms.MonthCalendar();
             this.SuspendLayout();
             // 
-            // monthCalendar1
+            // mcMeses
             // 
-            this.monthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(4, 3);
-            this.monthCalendar1.Location = new System.Drawing.Point(3, 5);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.mcMeses.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mcMeses.CalendarDimensions = new System.Drawing.Size(4, 3);
+            this.mcMeses.Enabled = false;
+            this.mcMeses.Location = new System.Drawing.Point(3, 5);
+            this.mcMeses.Name = "mcMeses";
+            this.mcMeses.TabIndex = 0;
             // 
             // frmPrincipal
             // 
@@ -47,7 +47,7 @@ namespace Presentacion.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(791, 474);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.mcMeses);
             this.Name = "frmPrincipal";
             this.Text = "frmPrincipal";
             this.ResumeLayout(false);
@@ -56,6 +56,6 @@ namespace Presentacion.Views
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar mcMeses;
     }
 }

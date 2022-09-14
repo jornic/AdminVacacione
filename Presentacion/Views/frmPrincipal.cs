@@ -17,9 +17,5 @@ namespace Presentacion.Views
             InitializeComponent();
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
     }
 }
